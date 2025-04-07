@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{title} | Language Flashcards
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    nav.navbar
+      .container.navbar-container
+        a.navbar-brand(href="/") Language Flashcards
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href="/flashcards") All Flashcards
+          li.nav-item
+            a.nav-link(href="/flashcards/new") Add New
+
+    .container
+      // Flash messages
+      if success_msg && success_msg.length
+        .alert.alert-success.alert-dismissible
+          = success_msg
+          button.btn-close(type="button") ×
+      
+      if error_msg && error_msg.length
+        .alert.alert-danger.alert-dismissible
+          = error_msg
+          button.btn-close(type="button") ×
+
+      block content
+      
+      // Disclaimer
+      .disclaimer
+        p This web application was created to fulfill Web Technology module's requirements and does not represent an actual company or service.
+    
+    footer
+      .container
+        p &copy; 2025 Language Flashcards. All rights reserved by Elbek Makhmudov (ID: 00021960).
+
+    script.
+      //  alert 
+      document.querySelectorAll('.btn-close').forEach(button => {
+        button.addEventListener('click', function() {
+          this.closest('.alert').style.display = 'none';
+        });
+      });
+      
+      document.querySelectorAll('.flashcard').forEach(card => {
+        card.addEventListener('click', function(e) {
+          if (e.target.closest('.card-actions')) return;
+          this.classList.toggle('flipped');
+        });
+      });

@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  h1.mb-4 Edit Flashcard
+  
+  if errors && errors.length
+    .alert.alert-danger
+      ul.mb-0
+        each error in errors
+          li= error.msg
+  
+  .form-container
+    .card.shadow
+      .card-body
+        form(action=`/flashcards/${flashcard.id}?_method=PUT`, method="POST")
+          .form-group
+            label.form-label(for="term") Term
+            input.form-control(
+              type="text", 
+              id="term", 
+              name="term", 
+              value=flashcard.term,
+              required
+            )
+          
+          .form-group
+            label.form-label(for="definition") Definition
+            textarea.form-control(
+              id="definition", 
+              name="definition", 
+              rows="3", 
+              required
+            )= flashcard.definition
+          
+          .form-group
+            label.form-label(for="language") Language
+            select.form-select(id="language", name="language", required)
+              option(value="") Select a language
+              option(value="English", selected=flashcard.language === 'English') English
+              option(value="Spanish", selected=flashcard.language === 'Spanish') Spanish
+              option(value="French", selected=flashcard.language === 'French') French
+              option(value="German", selected=flashcard.language === 'German') German
+              option(value="Italian", selected=flashcard.language === 'Italian') Italian
+              option(value="Chinese", selected=flashcard.language === 'Chinese') Chinese
+              option(value="Japanese", selected=flashcard.language === 'Japanese') Japanese
+              option(value="Korean", selected=flashcard.language === 'Korean') Korean
+              option(value="Russian", selected=flashcard.language === 'Russian') Russian
+              option(value="Uzbek", selected=formData && formData.language === 'Uzbek') Uzbek
+              option(value="Tajik", selected=formData && formData.language === 'Tajik') Tajik
+              option(value="Arabic", selected=flashcard.language === 'Arabic') Arabic
+              option(value="Portuguese", selected=flashcard.language === 'Portuguese') Portuguese
+              option(value="Other", selected=flashcard.language === 'Other') Other
+          
+          .form-actions
+            a.btn.btn-secondary(href="/flashcards") Cancel
+            button.btn.btn-primary(type="submit") Update Flashcard

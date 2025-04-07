@@ -1,0 +1,39 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "term": "salom",
+    "definition": "hello",
+    "language": "Uzbek",
+    "createdAt": "2025-04-05T13:00:00.000Z",
+    "updatedAt": "2025-04-07T14:11:25.176Z"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "term": "Gracias",
+    "definition": "Thank you in Spanish",
+    "language": "Spanish",
+    "createdAt": "2025-04-05T13:00:00.000Z"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440002",
+    "term": "Ciao",
+    "definition": "Hello or Goodbye in Italian",
+    "language": "Italian",
+    "createdAt": "2025-04-05T13:00:00.000Z"
+  },
+  {
+    "id": "07470625-d847-4946-980a-74b8c6ab983c",
+    "term": "Chigap",
+    "definition": "How are u?",
+    "language": "Tajik",
+    "createdAt": "2025-04-07T09:52:03.695Z",
+    "updatedAt": "2025-04-07T09:57:13.318Z"
+  },
+  {
+    "id": "53dca15b-507b-45f7-85ad-d5a215dd6326",
+    "term": "Bober Kurwa",
+    "definition": "lorem iosum",
+    "language": "Uzbek",
+    "createdAt": "2025-04-07T09:57:02.378Z"
+  }
+]

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1.mb-4 Language Flashcards
+  
+  .mb-4
+    a.btn.btn-primary(href="/flashcards/new") Add New Flashcard
+
+  if flashcards && flashcards.length
+    .row
+      each flashcard in flashcards
+        .col
+          .card.flashcard
+            .card-inner
+              .card-front
+                span.language-badge= flashcard.language
+                h3.card-title= flashcard.term
+                p.card-text Click to see definition
+              .card-back
+                span.language-badge= flashcard.language
+                h3.card-title Definition
+                p.card-text= flashcard.definition
+                .card-actions
+                  a.btn.btn-warning.me-2(href=`/flashcards/${flashcard.id}/edit`) Edit
+                  form.d-inline(action=`/flashcards/${flashcard.id}?_method=DELETE`, method="POST")
+                    button.btn.btn-danger(type="submit" onclick="return confirm('Are you sure you want to delete this flashcard?')") Delete
+  else
+    .alert.alert-info
+      p No flashcards found. Add your first flashcard to get started!
