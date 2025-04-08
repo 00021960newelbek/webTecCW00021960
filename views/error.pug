@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .text-center.py-5
+    h1.display-1 Error
+    h2.mb-4= message
+    if error && Object.keys(error).length
+      pre.text-start.bg-light.p-3.mt-4.rounded.text-danger
+        code= JSON.stringify(error, null, 2)
+    a.btn.btn-primary.mt-3(href="/flashcards") Return to Flashcards
