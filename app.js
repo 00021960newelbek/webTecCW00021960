@@ -61,11 +61,7 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).render('error', { 
         title: 'Error', 
-<<<<<<< HEAD
-        message: 'Something went wrong fsdgdsff! fdsf',
-=======
-        message: 'Something went wrong!',
->>>>>>> 1f5b6313679e236b3b745b2efa8826eed471e5d9
+        message: 'Something went wrong fsdgdsff! fdsf dsfds',
         error: process.env.NODE_ENV === 'development' ? err : {}
     });
 });
